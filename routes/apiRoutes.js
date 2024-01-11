@@ -1,4 +1,5 @@
 const express = require('express')
+const methodOverride = require('method-override');
 const router = express.Router()
 const apiControllers = require('../controllers/apiControllers')
 const fighterControllers = require('../controllers/fighterControllers')
@@ -7,7 +8,8 @@ const objectControllers = require('../controllers/objectControllers')
 const storeControllers = require('../controllers/storeControllers')
 const missionControllers = require('../controllers/missionControllers')
 
-
+router.use(methodOverride('_method'));
+router.use(express.urlencoded({ extended: true }));
 //API
 router.get('/', apiControllers.initialFunction)
 //FIGHTER
@@ -15,6 +17,7 @@ router.get('/fighter', fighterControllers.getFighter)
 router.get('/fighter/allfighter', fighterControllers.getAllFighters)
 //USER
 router.get('/user', userControllers.getUser)
+router.post('/user/crearuno', userControllers.createUser)
 //OBJECT
 router.get('/object', objectControllers.getObject)
 //STORE
