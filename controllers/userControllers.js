@@ -18,7 +18,13 @@ const userControllers = {
         })
 
         res.json(newUser);
+    },
+    getUserEdit: async (req, res) => {
+        fetch('http://localhost:3009/api/usertoupdate')
+            .then(res => res.json())
+            .then(data => { return res.json(data) })
     }
+
 
 
 }
