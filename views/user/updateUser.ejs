@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar usuario</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Editar Usuario</h1>
+        <% if(usuario){ %>
+            <form action="http://localhost:3021/apiroutes/user/usertoupdate" method="POST" class="containerForm">
+                <br>
+                <label for="name">Name</label>
+                <input type="text" name="name" value=<%=usuario.name %>>
+                <br>
+                <label for="email">Email</label>
+                <input type="text" name="email" value=<%=usuario.email %>>
+                <br>
+                <label for="password">Password</label>
+                <input type="text" name="password">
+                <br>
+                <label for="profile">Profile</label>
+                <input type="text" name="profile" value=<%=usuario.profile %>>
+                <br>
+                <label for="avatar">Avatar</label>
+                <input type="text" name="avatar" value=<%=usuario.avatar %>>
+                <br>
+                <label for="money">Money</label>
+                <input type="number" name="money" value=<%=usuario.money %>>
+                <br>
+                <input type="submit" value="Editar">
+            </form>
+            <%}%>
+    </div>
+</body>
+
+</html>

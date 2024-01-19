@@ -19,10 +19,17 @@ const userControllers = {
 
         res.json(newUser);
     },
-    getUserEdit: async (req, res) => {
-        fetch('http://localhost:3009/api/usertoupdate')
+    getEditUser: async (req, res) => {
+        //res.render('./user/updateuser')
+        let usuario
+        const userToEdit = await fetch('http://localhost:3009/api/usertoupdate')
             .then(res => res.json())
-            .then(data => { return res.json(data) })
+            .then(data => { return usuario = data })
+        await userToEdit
+        return res.render('./user/updateuser', { usuario })
+    },
+    editUser: (req, res) => {
+        return res.send('Hola Eze!')
     }
 
 

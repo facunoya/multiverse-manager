@@ -18,7 +18,10 @@ router.get('/fighter/allfighter', fighterControllers.getAllFighters)
 //USER
 router.get('/user', userControllers.getUser)
 router.post('/user/crearuno', userControllers.createUser)
-router.get('/user/usertoupdate', userControllers.getUserEdit)
+//router.get('/user/usertoupdate', userControllers.getUserEdit)
+router.get('/user/usertoupdate', userControllers.getEditUser)
+router.post('/user/usertoupdate', userControllers.editUser)
+
 //OBJECT
 router.get('/object', objectControllers.getObject)
 //STORE
