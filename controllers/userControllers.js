@@ -28,8 +28,9 @@ const userControllers = {
         await userToEdit
         return res.render('./user/updateuser', { usuario })
     },
-    editUser: (req, res) => {
-        return res.send('Hola Eze!')
+    editUser: async (req, res) => {
+        const updateUser = await { ...req.body }
+        return res.send('Hola ' + updateUser.name + ' !')
     }
 
 
